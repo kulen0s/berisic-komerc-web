@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     const pretraga = document.getElementById("pretraga");
     const cijenaOd = document.getElementById("cijenaOd");
     const cijenaDo = document.getElementById("cijenaDo");
-    const tekst = pretraga.value.trim().toLowerCase();
     const filtrirajBtn = document.getElementById("filtrirajBtn");
 
     let sviArtikli = [];
@@ -12,6 +11,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         const res = await fetch("/api/artikli");
         sviArtikli = await res.json();
         prikaziArtikle(sviArtikli);
+        dodajEvente();  // ⬅️ OBAVEZNO!
     } catch (err) {
         console.error("Greška kod učitavanja artikala:", err);
     }
@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
 
         prikaziArtikle(filtrirani);
+        dodajEvente();  // ⬅️ ponovo dodaj evente nakon filtriranja
     });
 
     function prikaziArtikle(lista) {
@@ -47,5 +48,31 @@ document.addEventListener("DOMContentLoaded", async () => {
             `;
             container.appendChild(div);
         });
+    }
+
+    function dodajEvente() {
+        document.querySelectorAll(".dodaj-kosarica").forEach(button => {
+            button.addEventListener("click", () => {
+                const id = button.dataset.id;
+                const artikl = sviArtikli.find(x => x.id == id);
+                const input = document.querySelector(`.kolicina[data-id="${id}"]`);
+                const kolicina = parseInt(input.value) || 1;
+                dodajUKosaricu(artikl, kolicina);
+            });
+        });
+    }
+
+    function dodajUKosaricu(artikl, kolicina) {
+        let kosarica = JSON.parse(localStorage.getItem("kosarica")) || [];
+        const postoji = kosarica.find(x => x.id === artikl.id);
+
+        if (postoji) {
+            postoji.kolicina += kolicina;
+        } else {
+            kosarica.push({ ...artikl, kolicina });
+        }
+
+        localStorage.setItem("kosarica", JSON.stringify(kosarica));
+        alert("Artikl dodan u košaricu!");
     }
 });
