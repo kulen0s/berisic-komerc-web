@@ -1,19 +1,7 @@
-
-// KONFIGURACIJA ZA POSTGRES – prilagodi svojim postavkama
-/*
-const pool = new Pool({
-  user: "postgres",
-  host: "localhost",
-  database: "webshop",
-  password: "Kamion20", // ← zamijeni svojom lozinkom
-  port: 5432,
-});
-*/
-
 require('dotenv').config();
 const express = require("express");
 const path = require("path");
-const fetch = require("node-fetch");
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 const nodemailer = require("nodemailer");
 const PDFDocument = require("pdfkit");
 const fs = require("fs");

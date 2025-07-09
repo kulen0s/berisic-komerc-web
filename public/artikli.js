@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const pretraga = document.getElementById("pretraga");
     const cijenaOd = document.getElementById("cijenaOd");
     const cijenaDo = document.getElementById("cijenaDo");
+    const tekst = pretraga.value.trim().toLowerCase();
     const filtrirajBtn = document.getElementById("filtrirajBtn");
 
     let sviArtikli = [];
