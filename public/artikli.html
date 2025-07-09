@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Artikli</title>
+    <link rel="stylesheet" href="style-artikli.css">
+    <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;1,200;1,300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .kartica {
+            border: 1px solid #ccc;
+            padding: 15px;
+            width: 300px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+            background-color: #fff;
+        }
+        .kartica img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-links">
+                <img class="logo" src="images/bk_ime_bijelo.png" alt="logo">
+                <ul>
+                    <li><a href="index.html">Početna</a></li>
+                    <li><a href="about.html">O nama</a></li>
+                    <li><a href="contact.html">Kontakt</a></li>
+                    <li><a href="artikli.html">Artikli</a></li>
+                    <li><a href="kosarica.html">Košarica</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="filter-search" style="text-align: center; margin-top: 30px;">
+    <input type="text" id="pretraga" placeholder="Pretraži po nazivu" style="padding: 8px; width: 200px;">
+    <input type="number" id="cijenaOd" placeholder="Cijena od (€)" style="padding: 8px; width: 120px;">
+    <input type="number" id="cijenaDo" placeholder="Cijena do (€)" style="padding: 8px; width: 120px;">
+    <button id="filtrirajBtn" style="padding: 8px 15px;">Filtriraj</button>
+    </div>
+
+
+    <h2 style="text-align:center; margin-top: 30px;">Naši artikli</h2>
+    <div class="container" id="artikli-container"></div>
+
+    <footer class="footer">
+        <div class="row">
+            <div class="col">
+                <img class="logo-footer" src="images/LOGO-BK1.png">
+            </div>
+            <div class="col">
+                <p>ADRESA: <br>ULICA J.J.STROSSMAYERA 250</p>
+                <p>RADNO VRIJEME: PON-PET 8-17<br>SUBOTA  8-13</p>
+            </div>
+            <div class="col">
+                <p><a href="mailto:info@berisic-komerc.hr">info@berisic-komerc.hr</a></p>
+                <p>TELEFON: +31 301010</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="artikli.js"></script>
+</body>
+</html>

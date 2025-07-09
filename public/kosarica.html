@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Košarica</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;1,200;1,300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="style-artikli.css">
+    <style>
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .kosarica-item {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: flex-start;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #fafafa;
+        }
+
+        .kosarica-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-right: 20px;
+            border-radius: 6px;
+        }
+
+        .kosarica-item-details {
+            flex-grow: 1;
+            text-align: left;
+        }
+
+        .kosarica-item-details h4 {
+            margin: 0 0 10px;
+        }
+
+        .ukloni {
+            background-color: #e63946;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .ukupan-container {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #f0f0f0;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 6px;
+            text-align: left;
+        }
+        .form-send {
+            margin: 30px auto;
+            max-width: 400px;
+            padding: 20px;
+            background-color: #f7f7f7;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .form-send input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .form-send button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #1a0e55;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-links">
+                <img class="logo" src="images/bk_ime_bijelo.png" alt="logo">
+                <ul>
+                    <li><a href="index.html">Početna</a></li>
+                     <li><a href="about.html">O nama</a></li>
+                    <li><a href="contact.html">Kontakt</a></li>
+                    <li><a href="artikli.html">Artikli</a></li>
+                    <li><a href="kosarica.html">Košarica</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <h2>Vaša košarica</h2>
+    <div class="container" id="kosarica-container"></div>
+
+    <div class="form-send">
+    <h3>Pošalji narudžbu</h3>
+    <input type="text" id="imeKupca" placeholder="Ime i prezime">
+    <input type="email" id="emailKupca" placeholder="Email">
+    <button id="posaljiNarudzbu">Pošalji narudžbu</button>
+</div>
+
+           <footer class="footer">
+        <div class="row">
+            <div class="col">
+                <img class="logo-footer" src="images/LOGO-BK1.png">
+                    <p></p>
+            </div>
+            <div class="col">
+                <p>ADRESA: <br>ULICA J.J.STROSSMAYERA 250</p>
+                <p>RADNO VRIJEME: PON-PET 8-17<br>
+                                  SUBOTA  8-13
+                </p>
+                
+            </div>
+            <div class="col">
+                <p><a href="mailto:info@berisic-komerc.hr">info@berisic-komerc.hr</a></p>
+                <p>TELEFON: +31 301010</p>
+            </div>
+        </div>
+   </footer>
+
+    <script src="kosarica.js"></script>
+</body>
+</html>

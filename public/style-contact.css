@@ -1,0 +1,303 @@
+*{
+    margin : 0;
+    padding : 0;
+    font-family: 'Raleway', sans-serif;
+}
+
+header{
+    display: flex;
+    justify-content:space-between;
+    align-items:center ;
+    padding: 1px 1%;
+    background-color: #333c52;
+
+}
+
+.logo{
+    cursor: pointer;
+    max-width: 350px;
+    margin-top: 15px;
+    margin-bottom:15px;
+    margin-right: auto;
+
+
+}
+.nav-links {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; 
+    margin-top: 0;
+    margin-right: 0;
+    padding: 0 20px;
+}
+
+.nav-links ul {
+    display: flex; 
+    margin-left: auto; 
+}
+
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    justify-content: flex-end;
+    padding: 8px 12px;
+    position:relative;
+    margin-top: 25px;
+}
+.nav-links ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 25px;
+    
+}
+.nav-links ul li::after{
+    content:'';
+    width: 0%;
+    height: 2px;
+    background:#f44336;
+    display: block;
+    margin:auto;
+    transition: 0.5s;
+}
+.nav-links ul li:hover:after{
+    width:100%;
+}
+
+footer{
+    width: 100%;
+    max-height: 200px;
+    bottom: 0;
+    background-color: #333c52;
+    padding: 20px 10%;
+    line-height: 20px;
+    margin-top: 0px;
+}
+
+.logo-footer{
+    width:100px;
+}
+
+.row{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.col{
+    font-size: 12px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+    margin-top: 20px; 
+}
+
+.col h4{
+    font-size: 13px;
+    
+}
+
+.col :hover{
+    color: #ffffff;
+	padding-left: 8px;
+}
+.button {
+    display: inline-block;
+    text-decoration: none;
+    color: #000000;
+    border: 3px solid #040000;
+    padding: 10px;
+    font-size: 20px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: bolder;
+  }
+
+.button:hover{
+    border: 1px solid #6a0404;
+    background: #6a0404;
+
+}
+
+.row-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; 
+    margin-bottom: 0px;
+}
+
+.business-info {
+    max-width: 600px;
+    max-height: 600px;
+    margin: 0 auto;
+    background-color: #c0cff0;
+    padding: 5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    flex-basis: 45%; 
+    justify-content: center;
+    margin-top: 5%;
+    margin-left: 15%;
+    font-weight: bold;
+    
+
+}
+
+.contact-info {
+    display: flex;
+    margin-bottom: 20px;
+    background-color: #c0cff0;
+    margin-top: 10px;
+    
+}
+
+.contact-info .employee {
+    margin: 10px;
+    color: black;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.employee h2 {
+    font-size: 23px;
+    margin-bottom: 5px;
+    color: #5c3d88;
+    font-weight: bold;
+
+}
+
+.employee p {
+    margin-bottom: 10px;
+}
+
+.contact-button {
+    display: block;
+    width: 100%;
+    background-color: #5c3d88;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 12px;
+}
+
+.address p {
+    margin-bottom: 15px;
+}
+
+.email-phone {
+    margin-bottom: 15px;
+}
+
+.email-link {
+    color: #5c3d88;
+}
+
+.google-maps {
+    display: flex;
+    justify-content: center;
+    height: 70vh;
+    margin-top: 30px;
+    flex-basis: 60%; 
+    margin-top: 5%;
+}
+
+.google-maps iframe {
+    height: 540px;
+    border-radius: 15px;
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 10px 5%;
+    text-align: center;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    padding-left: 0;
+    margin-top: 10px;
+  }
+
+  .nav-links ul li {
+    padding: 5px 0;
+    margin-top: 10px;
+  }
+
+  .logo {
+    max-width: 250px;
+    margin: 10px auto;
+  }
+
+  .row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .business-info {
+    width: 90%;
+    margin: 20px auto;
+    padding: 30px;
+  }
+
+  .contact-info {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .contact-info .employee {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .google-maps {
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 10px;
+  }
+
+  .google-maps iframe {
+    width: 100%;
+    height: 300px;
+  }
+
+  footer {
+    text-align: center;
+    padding: 30px 5%;
+  }
+
+  .logo-footer {
+    margin-bottom: 20px;
+  }
+
+  .col {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
+
+

@@ -1,0 +1,243 @@
+/* Osnovne postavke za artikle */
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+/* Naslov */
+h2 {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 32px;
+    color: #333;
+}
+
+/* Glavni kontejner */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px 5%;
+    box-sizing: border-box;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+}
+
+/* Svaka kartica proizvoda */
+.kartica {
+    background-color: #fff;
+    width: 300px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.kartica:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* Slika artikla */
+.kartica img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Naziv, opis i cijena */
+.kartica h3 {
+    font-size: 20px;
+    margin: 10px 0 5px 0;
+    color: #333;
+}
+
+.kartica p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.kartica strong {
+    font-size: 18px;
+    color: #111;
+}
+
+*{
+    margin : 0;
+    padding : 0;
+    font-family: 'Raleway', sans-serif;
+}
+
+header{
+    display: flex;
+    justify-content:space-between;
+    align-items:center ;
+    padding: 1px 1%;
+    background-color: #333c52;
+
+}
+
+.logo{
+    cursor: pointer;
+    max-width: 350px;
+    margin-top: 15px;
+    margin-bottom:15px;
+    margin-right: auto;
+
+
+}
+.nav-links {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content:space-between; 
+    margin-top: 0;
+    margin-right: 0;
+    padding: 0 20px;
+}
+
+.nav-links ul {
+    display: flex; 
+    margin-left: auto; 
+}
+
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    justify-content: flex-end;
+    padding: 8px 12px;
+    position:relative;
+    margin-top: 25px;
+}
+.nav-links ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 25px;
+    
+}
+.nav-links ul li::after{
+    content:'';
+    width: 0%;
+    height: 2px;
+    background:#f44336;
+    display: block;
+    margin:auto;
+    transition: 0.5s;
+}
+.nav-links ul li:hover:after{
+    width:100%;
+}
+
+body{
+    max-width: 120%;
+}
+
+footer{
+    width: 100%;
+    max-height: 200px;
+    bottom: 0;
+    background-color: #333c52;
+    padding: 20px 10%;
+    line-height: 20px;
+}
+
+.logo-footer{
+    width: 100px;
+}
+
+.row{
+    width: 90%;
+    margin: auto;
+    display:flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.col{
+    font-size: 12px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+    margin-top: 20px; 
+    width: 100%;
+    max-width: 300px;
+    text-align: left;
+}
+
+
+.col :hover{
+    color: #ffffff;
+	padding-left: 8px;
+}
+
+.dodaj-kosarica {
+    background-color: #1a0e55;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.dodaj-kosarica:hover {
+    background-color: #0e0733;
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .kartica {
+    width: 90%;
+    max-width: 350px;
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-links .logo {
+    width: 140px;
+  }
+
+  footer .row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .form-send {
+    width: 90%;
+  }
+
+  .filter-search {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .filter-search input,
+  .filter-search button {
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
