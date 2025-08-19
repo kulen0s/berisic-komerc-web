@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
 
         prikaziArtikle(filtrirani);
-        dodajEvente();  // ⬅️ ponovo dodaj evente nakon filtriranja
+        dodajEvente(); // ⬅️ OBAVEZNO!
     });
 
     function prikaziArtikle(lista) {

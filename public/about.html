@@ -16,16 +16,17 @@
     <body>
     <header>
         <nav>
-            <div class="nav-links">
-                <img class="logo" src="images/bk_ime_bijelo.png" alt="logo">
-                <ul>
-                    <li><a href="index.html">Početna</a></li>
-                    <li><a href="about.html">O nama</a></li>
-                    <li><a href="contact.html">Kontakt</a></li>
-                    <li><a href="artikli.html">Artikli</a></li>
-                    <li><a href="kosarica.html">Košarica</a></li>
-                </ul>
-            </div>
+        <div class="nav-links">
+            <img class="logo" src="images/bk_ime_bijelo.png" alt="logo">
+            <ul id="navigacija">
+            <li><a href="index.html">Početna</a></li>
+            <li><a href="about.html">O nama</a></li>
+            <li><a href="contact.html">Kontakt</a></li>
+            <li class="privatno" style="display: none;"><a href="artikli.html">Artikli</a></li>
+            <li class="privatno" style="display: none;"><a href="kosarica.html">Košarica</a></li>
+            <li id="login-logout"><a href="login.html">Prijava</a></li>
+            </ul>
+        </div>
         </nav>
     </header>
 
@@ -70,6 +71,36 @@
                 <p>TELEFON: +31 301010</p>
             </div>
         </div>
+
+        <script type="module">
+            import { createClient } from 'https://esm.sh/@supabase/supabase-js'
+
+            const supabase = createClient(
+                'https://estokvtjkexhrnnbhtrc.supabase.co', // tvoj URL
+                'public-anon-key-ovdje'                     // tvoj anon key
+            )
+
+            const { data: { session } } = await supabase.auth.getSession()
+
+            const privatniLinkovi = document.querySelectorAll(".privatno")
+            const loginLogout = document.getElementById("login-logout")
+
+            if (session) {
+                // Ako je korisnik prijavljen – pokaži privatne linkove i promijeni gumb
+                privatniLinkovi.forEach(el => el.style.display = "inline-block")
+                loginLogout.innerHTML = `<a href="#" id="logout-btn">Odjava</a>`
+
+                // Dodaj logout funkciju
+                document.getElementById("logout-btn").addEventListener("click", async () => {
+                await supabase.auth.signOut()
+                window.location.href = "login.html"
+                })
+            } else {
+                // Ako nije prijavljen, sakrij privatne linkove
+                privatniLinkovi.forEach(el => el.style.display = "none")
+                loginLogout.innerHTML = `<a href="login.html">Prijava</a>`
+            }
+            </script>
 
 </body>
 </html>

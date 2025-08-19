@@ -34,7 +34,7 @@ app.get("/api/artikli", async (req, res) => {
 app.post("/api/posalji-narudzbu", async (req, res) => {
   const { ime, email, narudzba } = req.body;
 
-  const pdfPath = `narudzba_${Date.now()}.pdf`;
+  const pdfPath = path.join(__dirname, "tmp", `narudzba_${Date.now()}.pdf`);
   const doc = new PDFDocument();
   doc.pipe(fs.createWriteStream(pdfPath));
 
@@ -67,6 +67,7 @@ app.post("/api/posalji-narudzbu", async (req, res) => {
         pass: process.env.EMAIL_PASS
       }
     });
+    console.log("✅ PDF generiran:", pdfPath);
 
     try {
       await transporter.sendMail({
@@ -84,6 +85,7 @@ app.post("/api/posalji-narudzbu", async (req, res) => {
 
       fs.unlinkSync(pdfPath);
       res.json({ poruka: "Narudžba poslana kao PDF!" });
+      console.log("✅ Mail uspješno poslan!");
     } catch (err) {
       console.error("❌ Greška kod slanja emaila:", err);
       res.status(500).json({ poruka: "Slanje nije uspjelo." });
