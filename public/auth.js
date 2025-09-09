@@ -1,7 +1,8 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js'
 
 const SUPABASE_URL = 'https://estokvtjkexhrnnbhtrc.supabase.co'
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...'
+const SUPABASE_ANON_KEY =  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVzdG9rdnRqa2V4aHJubmJodHJjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTIwNTMwNDYsImV4cCI6MjA2NzYyOTA0Nn0.ZvpyVoxa-nFAAgvaTgwzIs3w-jKvTTsj3yICMihD_Go"  
+
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
   auth: {
@@ -46,6 +47,9 @@ if (form) {
     }
 
     console.log('[AUTH] Trying signInWithPassword for:', email)
+    console.log('[AUTH] Supabase project URL:', SUPABASE_URL)
+    console.log('[AUTH] Using key (first 10 chars):', SUPABASE_ANON_KEY.substring(0,10))
+
 
     const { data, error } = await supabase.auth.signInWithPassword({
       email,
