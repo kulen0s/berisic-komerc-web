@@ -2,7 +2,7 @@
 <html lang="hr">
 <head>
   <meta charset="UTF-8" />
-  <title>Prijava</title>
+  <title>Registracija</title>
   <link rel="stylesheet" href="style.css" />
   <style>
     body {
@@ -13,7 +13,7 @@
       align-items: center;
       height: 100vh;
     }
-    .login-container {
+    .register-container {
       background: white;
       padding: 40px;
       border-radius: 12px;
@@ -38,11 +38,12 @@
     button:hover {
       background-color: #1e2738;
     }
-    #greska {
-      color: red;
+    #msg {
       margin-top: 10px;
       text-align: center;
     }
+    #msg.error { color: red; }
+    #msg.ok { color: green; }
     .extra-links {
       margin-top: 15px;
       text-align: center;
@@ -59,20 +60,21 @@
   </style>
 </head>
 <body>
-  <div class="login-container">
-    <h2 style="text-align: center;">Prijava</h2>
-    <form id="login-form">
+  <div class="register-container">
+    <h2 style="text-align: center;">Registracija</h2>
+    <form id="reg-form">
       <input type="email" id="email" placeholder="Email" required />
-      <input type="password" id="password" placeholder="Lozinka" required />
-      <button type="submit">Prijavi se</button>
+      <input type="password" id="password" placeholder="Lozinka (min 6 znakova)" minlength="6" required />
+      <input type="password" id="password2" placeholder="Ponovi lozinku" minlength="6" required />
+      <button id="submitBtn" type="submit">Registriraj se</button>
     </form>
-    <p id="greska"></p>
+    <div id="msg"></div>
     <div class="extra-links">
-      <p>Nisi registriran? <a href="register.html">Registriraj se</a></p>
+      <p>Već imaš račun? <a href="login.html">Prijava</a></p>
       <p><a href="index.html">← Natrag na početnu</a></p>
     </div>
   </div>
 
-  <script type="module" src="auth.js"></script>
+  <script type="module" src="register.js"></script>
 </body>
 </html>
