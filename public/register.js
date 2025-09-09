@@ -1,6 +1,5 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js'
 
-// Supabase klijent – koristi podatke iz .env koje Render učitava
 const supabase = createClient(
   "https://estokvtjkexhrnnbhtrc.supabase.co",
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVzdG9rdnRqa2V4aHJubmJodHJjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTIwNTMwNDYsImV4cCI6MjA2NzYyOTA0Nn0.ZvpyVoxa-nFAAgvaTgwzIs3w-jKvTTsj3yICMihD_Go"  

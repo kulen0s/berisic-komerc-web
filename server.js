@@ -30,7 +30,6 @@ app.get("/api/artikli", async (req, res) => {
   }
 });
 
-// Slanje narudžbe s PDF-om
 app.post("/api/posalji-narudzbu", async (req, res) => {
   const { ime, email, narudzba } = req.body;
 

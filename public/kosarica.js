@@ -29,13 +29,11 @@ document.addEventListener("DOMContentLoaded", () => {
         container.appendChild(item);
     });
 
-    // Prikaz ukupne cijene košarice
         const ukupnoDiv = document.createElement("div");
         ukupnoDiv.className = "ukupan-container";
         ukupnoDiv.textContent = `Ukupan iznos: ${ukupno.toFixed(2)} €`;
         container.appendChild(ukupnoDiv);
 
-    // Funkcionalnost uklanjanja
     document.querySelectorAll(".ukloni").forEach(button => {
         button.addEventListener("click", () => {
             const index = parseInt(button.dataset.index);

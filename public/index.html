@@ -98,8 +98,8 @@
             import { createClient } from 'https://esm.sh/@supabase/supabase-js'
 
             const supabase = createClient(
-                'https://estokvtjkexhrnnbhtrc.supabase.co', // tvoj URL
-                'public-anon-key-ovdje'                     // tvoj anon key
+                'https://estokvtjkexhrnnbhtrc.supabase.co', 
+                'public-anon-key-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVzdG9rdnRqa2V4aHJubmJodHJjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTIwNTMwNDYsImV4cCI6MjA2NzYyOTA0Nn0.ZvpyVoxa-nFAAgvaTgwzIs3w-jKvTTsj3yICMihD_Go'                     
             )
 
             const { data: { session } } = await supabase.auth.getSession()
